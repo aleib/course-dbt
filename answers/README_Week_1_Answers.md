@@ -49,7 +49,7 @@ FROM hourly_counts
 **Code**:
 ``` sql
 SELECT 
-	AVG(delivered_at - created_at)
+  AVG(delivered_at - created_at)
 FROM dbt_alex_l.stg_orders
 WHERE 
   delivered_at IS NOT NULL
@@ -109,6 +109,6 @@ AS (
 )
 
 SELECT 
-	AVG(unique_session)
+  AVG(unique_session)
 FROM sessions_per_hour
 ```
