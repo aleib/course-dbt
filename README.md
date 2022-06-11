@@ -6,6 +6,10 @@
 
 - **[Gitpod Workspace Dashboard](https://gitpod.io/workspaces)**
 
+## Project Work
+
+- [Week 1 Answers](./answers/README_Week_1_Answers.md)
+
 ## Info
 
 Template repository for the projects and environment of the course: Analytics engineering with dbt

@@ -41,7 +41,7 @@ FROM hourly_counts
 
 ---
 
-**Q:** 
+**Q3:** 
 > On average, how long does an order take from being placed to being delivered? 
 
 **Ans:** `3 days 21 hours` (approx.)
@@ -59,7 +59,7 @@ WHERE
 
 ---
 
-**Q:** 
+**Q4:** 
 > How many users have only made one purchase? Two purchases? Three+ purchases? 
 
 **Ans:** 
@@ -92,7 +92,7 @@ GROUP BY order_count_category
 
 ---
 
-**Q:** 
+**Q5:** 
 > On average, how many unique sessions do we have per hour?
 
 **Ans:** `16.3`
