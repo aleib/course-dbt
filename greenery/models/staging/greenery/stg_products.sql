@@ -1,6 +1,6 @@
 {{
   config(
-    materialized='table'
+    materialized='view'
   )
 }}
 
@@ -10,7 +10,7 @@ WITH products AS(
 )
 
 SELECT 
-  product_id
+  product_id as product_id
   , inventory
   , name
   , price

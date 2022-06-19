@@ -1,0 +1,91 @@
+version: 2
+
+models:
+
+  - name: dim_addresses
+    description: Address dimension table
+    columns:
+      - name: address_id
+        description: UID for each unique address on platform
+        tests:
+          - not_null
+          - unique
+      - name: address
+      - name: country
+      - name: states
+      - name: zipcode
+
+  - name: dim_products
+    description: Product dimension table
+    columns:
+      - name: product_id
+        description: UUID for each unique product on platform
+        tests:
+          - not_null
+          - unique
+      - name: number_in_stock
+      - name: name
+      - name: price_usd
+  
+  - name: dim_promos
+    description: Promo code dimension table
+    columns:
+      - name: promo_id
+        description: Each unique promocode on platform
+        tests:
+          - not_null
+          - unique
+      - name: discount_usd
+      - name: promo_status
+
+  - name: dim_users
+    description: User dimension table
+    columns:
+      - name: user_id
+        description: UUID for each unique user on platform
+        tests:
+          - not_null
+          - unique
+      - name: first_name
+      - name: last_name
+      - name: email
+      - name: phone_number
+      - name: created_at_utc
+      - name: updated_at_utc
+      - name: address_id
+
+  # - name: fct_orders
+  #   description: Order fact table
+  #   columns:
+  #     - name: order_id
+  #       description: UUID for each unique order on platform
+  #       tests:
+  #         - not_null
+  #         - unique
+  #     - name: user_id
+  #     - name: promo_id
+  #     - name: address_id
+  #     - name: created_at_utc
+  #     - name: order_cost_usd
+  #     - name: shipping_cost_usd
+  #     - name: order_total_usd
+  #     - name: tracking_id
+  #     - name: shipping_service
+  #     - name: estimated_delivery_at_utc
+  #     - name: delivered_at_utc
+  #     - name: order_status
+
+  # - name: fct_events
+  #   description: Event fact table
+  #   columns:
+  #     - name: event_id
+  #       tests:
+  #         - not_null
+  #         - unique
+  #     - name: session_id
+  #     - name: user_id
+  #     - name: page_url
+  #     - name: created_at_utc
+  #     - name: event_type
+  #     - name: order_id
+  #     - name: product_id

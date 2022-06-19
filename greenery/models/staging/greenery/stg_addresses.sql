@@ -1,6 +1,6 @@
 {{
   config(
-    materialized='table'
+    materialized='view'
   )
 }}
 
@@ -10,7 +10,7 @@ WITH addresses AS(
 )
 
 SELECT 
-    address_id
+    address_id as address_id
     , address
     , country
     , state

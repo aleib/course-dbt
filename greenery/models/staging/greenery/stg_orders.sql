@@ -1,6 +1,6 @@
 {{
   config(
-    materialized='table'
+    materialized='view'
   )
 }}
 
@@ -12,8 +12,8 @@ WITH orders AS(
 SELECT 
   order_id
   , address_id
-  , created_at
-  , delivered_at
+  , created_at as created_at_utc
+  , delivered_at as delivered_at_utc
   , estimated_delivery_at
   , order_cost
   , order_total

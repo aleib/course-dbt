@@ -1,6 +1,6 @@
 {{
   config(
-    materialized='table'
+    materialized='view'
   )
 }}
 
@@ -10,8 +10,8 @@ WITH users AS(
 )
 
 SELECT 
-  user_id
-  , address_id
+  user_id as user_id
+  , address_id as address_id
   , created_at as created_at_utc
   , email
   , first_name

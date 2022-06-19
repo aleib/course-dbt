@@ -1,6 +1,6 @@
 {{
   config(
-    materialized='table'
+    materialized='view'
   )
 }}
 
@@ -10,7 +10,7 @@ WITH promos AS(
 )
 
 SELECT 
-  promo_id
-  , discount
+  promo_id as promo_id
+  , discount as discount_usd
   , status
 FROM promos
