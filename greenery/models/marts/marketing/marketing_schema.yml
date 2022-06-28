@@ -1,0 +1,42 @@
+version: 2
+
+models:
+
+  - name: int_user_orders
+    description: An intermediate join between relevant order events and users
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+      - name: first_order
+      - name: last_order
+      - name: total_orders_lifetime
+      - name: total_spends_lifetime
+      - name: is_repeat_customer
+      - name: number_of_user_orders
+
+  - name: fct_user_orders
+    description: Aggregated data for each user and order counting how may items were in the order as well as the orders value in USD.
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+      - name: user_name
+        tests:
+          - not_null
+      - name: first_order
+      - name: last_order
+      - name: total_orders_lifetime
+      - name: total_spends_lifetime
+      - name: is_repeat_customer
+      - name: number_of_user_orders
+      - name: order_cost
+      - name: shipping_cost
+      - name: order_total
+      - name: order_status
+      - name: order_estimated_delivery_at
+      - name: order_delivered_at_utc

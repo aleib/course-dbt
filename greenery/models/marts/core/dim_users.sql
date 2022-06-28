@@ -5,15 +5,20 @@
 }}
 
 SELECT
-  user_id
+  u.user_id
+  , u.email
+  , u.first_name
+  , u.last_name
+  , u.phone_number
 
-  , email
-  , first_name
-  , last_name
-  , phone_number
+  , u.created_at_utc
+  , u.updated_at_utc
 
-  , created_at_utc
-  , updated_at_utc
-
-  , address_id
-FROM {{ ref('stg_users') }}
+  , a.address_id
+  , a.address
+  , a.zipcode
+  , a.state
+  , a.country
+FROM {{ ref('stg_users') }} u
+LEFT JOIN {{ ref('stg_addresses')}} a 
+  on u.address_id = a.address_id
