@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: fct_user_sessions
+    description: A table tracking webpage activity for each session
+    columns:
+      - name: session_id
+        tests:
+          - not_null
+      - name: user_id
+        tests:
+          - not_null
+      - name: first_name
+      - name: last_name
+      - name: page_view
+      - name: add_to_cart
+      - name: checkout
+      - name: package_shipped
+      - name: first_session_event
+      - name: last_session_event
+      - name: session_length_minutes
